@@ -37,7 +37,7 @@ namespace MovieRatingApp.Data
                 .HasForeignKey(mc => mc.CategoryID);
 
             base.OnModelCreating(modelBuilder);
-
+            /*
             // Seed Categories
             modelBuilder.Entity<Category>().HasData(
                 new Category { CategoryID = 1, Name = "Action", Description = "High energy, lots of stunts" },
@@ -50,10 +50,10 @@ namespace MovieRatingApp.Data
                 new Movie { MovieID = 1, Title = "Inception", Description = "A mind-bending thriller", ReleaseYear = 2010},
                 new Movie { MovieID = 2, Title = "The Dark Knight", Description = "Batman battles Joker", ReleaseYear = 2008 }
             );
-
+            */
         }
 
-        
+
 
 
     }
