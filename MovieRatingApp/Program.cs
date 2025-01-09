@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieRatingApp.Data;
+using MovieRatingApp.Interfaces;
+using MovieRatingApp.Repositories;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
